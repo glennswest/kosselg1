@@ -20,7 +20,10 @@ module carriage() {
     union() {
       // Main body.
       translate([0, 4, thickness/2])
-        cube([27, 40, thickness], center=true);
+      cube([27, 40, thickness], center=true);
+      // Extend a area to join with openbeam plate
+      translate([0, 0, 0 - (thickness / 2) + 2])
+      cube([80,80, thickness / 2], center=true);
       // Ball joint mount horns.
       for (x = [-1, 1]) {
         scale([x, 1, 1]) intersection() {
@@ -47,13 +50,15 @@ module carriage() {
           cube([7, 8, horn_thickness-2], center=true);
       }
     }
-    // Screws for linear slider.
-    for (x = [-10, 10]) {
-      for (y = [-10, 10]) {
+ 
+   // Screws for gantry plate.
+    for (x = [-22, +22]) {
+      for (y = [-22, +22 ]) {
         translate([x, y, thickness]) #
           cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
       }
     }
+
     // Screws for ball joints.
     translate([0, 16, horn_thickness/2]) rotate([0, 90, 0]) #
       cylinder(r=m3_wide_radius, h=60, center=true, $fn=12);

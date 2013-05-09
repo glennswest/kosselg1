@@ -10,6 +10,15 @@ m3_major = 2.85;
 m3_radius = m3_major/2 + extra_radius;
 m3_wide_radius = m3_major/2 + extra_radius + 0.2;
 
+// OD = outside diameter, corner to corner.
+m5_nut_od = 8.1;
+m5_nut_radius = m5_nut_od/2 + 0.2 + extra_radius;
+
+// Major diameter of metric 5mm thread.
+m5_major = 4.85;
+m5_radius = m5_major/2 + extra_radius;
+m5_wide_radius = m5_major/2 + extra_radius + 0.2;
+
 // NEMA17 stepper motors.
 motor_shaft_diameter = 5;
 motor_shaft_radius = motor_shaft_diameter/2 + extra_radius;
