@@ -18,12 +18,13 @@ module carriage() {
     cube([1.7, 100, belt_width], center=true);
   difference() {
     union() {
+      // base.
+      translate([0, 0, -1])
+          cube([60, 60, thickness/2], center=true);
+    
       // Main body.
       translate([0, 4, thickness/2])
-      cube([27, 40, thickness], center=true);
-      // Extend a area to join with openbeam plate
-      translate([0, 0, 0 - (thickness / 2) + 2])
-      cube([80,80, thickness / 2], center=true);
+        cube([27, 40, thickness], center=true);
       // Ball joint mount horns.
       for (x = [-1, 1]) {
         scale([x, 1, 1]) intersection() {
@@ -32,6 +33,7 @@ module carriage() {
           translate([horn_x, 16, horn_thickness/2]) rotate([0, 90, 0])
             cylinder(r1=14, r2=2.5, h=separation/2-horn_x);
         }
+      
       }
       // Belt clamps.
       difference() {
@@ -50,15 +52,27 @@ module carriage() {
           cube([7, 8, horn_thickness-2], center=true);
       }
     }
- 
-   // Screws for gantry plate.
-    for (x = [-22, +22]) {
-      for (y = [-22, +22 ]) {
-        translate([x, y, thickness]) #
-          cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
-      }
-    }
+    
+    // Screws for linear slider.
+    
+    translate([22, 0, thickness])
+       cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
+    translate([-22, 0, thickness])
+       cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
+    translate([0, -22, thickness])
+       cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
 
+
+ 
+    translate([22, -22, thickness-10])
+       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
+    translate([-22, 22, thickness-10])
+       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
+    translate([22, 22, thickness-10])
+       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
+    translate([-22,  -22, thickness-10])
+       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
+ 
     // Screws for ball joints.
     translate([0, 16, horn_thickness/2]) rotate([0, 90, 0]) #
       cylinder(r=m3_wide_radius, h=60, center=true, $fn=12);
@@ -70,9 +84,6 @@ module carriage() {
                    center=true, $fn=6);
       }
     }
-        // Vertical calibration screw.
-    translate([0, 30, thickness/2]) rotate([90, 0, 0]) #
-      cylinder(r=m3_radius, h=20, $fn=12);
   }
 }
 
