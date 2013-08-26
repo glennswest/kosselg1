@@ -35,6 +35,11 @@ module carriage() {
         }
       
       }
+      // Logo
+      translate([0, 24, 0]) rotate([0, 0, 0])
+          scale([0.11, 0.11, .7]) import("logotype.stl");
+      translate([0, -28.5, 0]) rotate([0, 0, 0])
+          scale([0.08, 0.08, .7]) import("logoopenrail.stl");     
       // Belt clamps.
       difference() {
         union() {
