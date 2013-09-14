@@ -14,6 +14,9 @@ m3_wide_radius = m3_major/2 + extra_radius + 0.2;
 m5_nut_od = 8.1;
 m5_nut_radius = m5_nut_od/2 + 0.2 + extra_radius;
 
+m5_head_od = 10.5;
+m5_head_radius = m5_head_od/2 + 0.2 + extra_radius;
+
 // Major diameter of metric 5mm thread.
 m5_major = 4.85;
 m5_radius = m5_major/2 + extra_radius;

@@ -68,15 +68,15 @@ module carriage() {
        cylinder(r=m3_wide_radius, h=30, center=true, $fn=12);
 
 
- 
-    translate([22, -22, thickness-10])
-       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
-    translate([-22, 22, thickness-10])
-       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
-    translate([22, 22, thickness-10])
-       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
-    translate([-22,  -22, thickness-10])
-       cylinder(r=m5_nut_radius, h=8, center=true, $fn=12);
+
+    translate([22, -22, thickness])
+       cylinder(r=m5_head_radius, h=30, center=true, $fn=12);
+    translate([-22, 22, thickness])
+       cylinder(r=m5_head_radius, h=30, center=true, $fn=12);
+    translate([22, 22, thickness])
+       cylinder(r=m5_head_radius, h=30, center=true, $fn=12);
+    translate([-22,  -22, thickness])
+       cylinder(r=m5_head_radius, h=30, center=true, $fn=12);
  
     // Screws for ball joints.
     translate([0, 16, horn_thickness/2]) rotate([0, 90, 0]) #
