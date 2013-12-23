@@ -20,7 +20,7 @@ module mount_cap() {
 
 	}
 		
-    translate([0, 0, -height/2])cylinder(r=4, h=height, $fn=36);
+    translate([0, 0, -height/2])cylinder(r=4.5, h=height, $fn=36);
     translate([0, 0, -height/2+jhead_height])cylinder(r=jhead_od_radius, h=jhead_height, $fn=36);
 
     for (a = [0:120:359]) rotate([0, 0, a]) {
