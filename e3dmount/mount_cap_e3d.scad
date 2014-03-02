@@ -10,7 +10,10 @@ height = 4;
 jhead_height=2.5;
 
 module fan_stud(){
-       cube([40,14,4]);
+       difference(){
+          cube([40,10,8]);
+          translate([-4,0,4]) cube([40,10,4]);
+          }
 }
 
 
@@ -31,7 +34,7 @@ module mount_cap() {
         translate([-8,mount_radius+12.2,-2]) rotate(a=[90,0,0]) A8452_mount();        
         // Do a bracket to push the fan down a bit
         translate([-20,-17,-2]) rotate(a=[90,0,0]) fan_stud();
-        translate([-20,-17,11]) rotate(a=[90,0,0]) fan_mount(size=40,thick=4);    
+        translate([-20,-21,8]) rotate(a=[90,0,0]) fan_mount(size=40,thick=4);    
 		cylinder(r=offset-5, h=height, center=true, $fn=36);
 		
 		for (a = [0:120:359]) rotate([0, 0, a]) {
