@@ -15,12 +15,12 @@ module mount_cap() {
 		cylinder(r=offset-5, h=height, center=true, $fn=36);
 		
 		for (a = [0:120:359]) rotate([0, 0, a]) {
-      	translate([0, mount_radius, 0])	cylinder(r=7.5, h=height, center=true, $fn=36);
+      	translate([0, mount_radius, 0])	cylinder(r=8.5, h=height, center=true, $fn=36);
     		}
 
 	}
 		
-    translate([0, 0, -height/2])cylinder(r=4.5, h=height, $fn=36);
+    translate([0, 0, -height/2])cylinder(r=jhead_od_radius, h=height, $fn=36);
     translate([0, 0, -height/2+jhead_height])cylinder(r=jhead_od_radius, h=jhead_height, $fn=36);
 
     for (a = [0:120:359]) rotate([0, 0, a]) {
@@ -29,7 +29,7 @@ module mount_cap() {
 
 	
     for (a = [60:120:359]) rotate([0, 0, a]) {
-      translate([0, offset, height/2])	cylinder(r=13, h=2*height, center=true, $fn=36);
+      translate([0, offset, height/2])	cylinder(r=12, h=2*height, center=true, $fn=36);
     }
 
   }

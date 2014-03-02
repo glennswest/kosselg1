@@ -6,7 +6,7 @@ $fn = 24;
 
 module frame_top() {
   difference() {
-    vertex(extrusion, idler_offset=3, idler_space=12.5);
+    vertex(extrusion, idler_offset=8, idler_space=14);
     // M4 bolt to support idler bearings.
     translate([0, 65, 0]) rotate([90, 0, 0])
       cylinder(r=2, h=50);
