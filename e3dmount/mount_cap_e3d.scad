@@ -12,7 +12,7 @@ jhead_height=2.5;
 module fan_stud(){
        difference(){
           cube([40,10,8]);
-          translate([-4,0,4]) cube([40,10,4]);
+          translate([0,4,0]) cube([40,6,4]);
           }
 }
 
